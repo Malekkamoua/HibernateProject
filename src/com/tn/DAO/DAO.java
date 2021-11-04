@@ -5,21 +5,21 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 public abstract class DAO<T> {
-	
-protected SessionFactory sessionFactory=null;
-protected Transaction tx =null;
-protected Session session=null;
-	
-public DAO(SessionFactory sessionFactory)	{
-	this.sessionFactory=sessionFactory;
-}
 
-public abstract boolean Create(T obj);
+	protected SessionFactory sessionFactory = null;
+	protected Transaction tx = null;
+	protected Session session = null;
 
-public abstract boolean Update(int id, String data);
+	public DAO(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 
-public abstract boolean Delete(int id);
+	public abstract boolean Create(T obj);
 
-public abstract T Find(int id);
-	
+	public abstract boolean Update(int id, String data);
+
+	public abstract boolean Delete(int id);
+
+	public abstract T Find(int id);
+
 }

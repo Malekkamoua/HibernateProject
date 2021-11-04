@@ -1,12 +1,12 @@
 package com.tn.beans;
 
 public class Message {
-	
+
 	private int idMessage;
 	private String text;
 	private Client client;
-	
-	public Message( String text, Client client) {
+
+	public Message(String text, Client client) {
 		this.text = text;
 		this.client = client;
 	}
@@ -34,7 +34,5 @@ public class Message {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
 
-	
 }
