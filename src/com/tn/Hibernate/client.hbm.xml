@@ -4,13 +4,13 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="com.tn.beans.Client" table="client">
-		<id name="idClient" column="id_client">
+		<id name="idClient" column="id">
 			<generator class="increment" />
 		</id>
 		<property name="name" type="string" column="name" />
 
-		<set name="messages">
-			<key column="idClient" />
+		<set name="messages" inverse="true" cascade="save-update, delete">
+			<key column="id_client" />
 			<one-to-many class="com.tn.beans.Message" />
 		</set>
 	</class>

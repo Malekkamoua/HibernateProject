@@ -4,12 +4,12 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="com.tn.beans.Message" table="message">
-		<id name="idMessage" column="id_message">
+		<id name="idMessage" column="id">
 			<generator class="increment" />
 		</id>
 		<property name="text" type="string" column="text" />
 
-		<many-to-one name="client" column="idClient"
+		<many-to-one name="client" column="id_client"
 			class="com.tn.beans.Client" not-null="true" />
 	</class>
 </hibernate-mapping>

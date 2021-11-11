@@ -1,11 +1,13 @@
 package com.tn.beans;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Client {
 
 	private String name;
-	private ArrayList<Message> messages;
+	private Set<Message> messages = new HashSet<Message>();
+
 	private int idClient;
 
 	public Client(String name) {
@@ -28,12 +30,30 @@ public class Client {
 		this.name = name;
 	}
 
-	public ArrayList<Message> getMessages() {
+	public Set<Message> getMessages() {
 		return messages;
 	}
 
-	public void setMessages(ArrayList<Message> messages) {
+	public void setMessages(Set<Message> messages) {
 		this.messages = messages;
+	}
+
+	public void addMessage(Message message) {
+		if (message == null) {
+			throw new IllegalArgumentException("null");
+		}
+		if (message.getClient() != null) {
+			message.getClient().removeMessage(message);
+		}
+		message.setClient(this);
+		messages.add(message);
+	}
+
+	public void removeMessage(Message message) {
+		if (message == null)
+			throw new IllegalArgumentException("null");
+		message.setClient(null);
+		messages.remove(message);
 	}
 
 }

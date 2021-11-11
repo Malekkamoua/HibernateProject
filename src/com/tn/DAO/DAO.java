@@ -14,12 +14,12 @@ public abstract class DAO<T> {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public abstract boolean Create(T obj);
+	public abstract boolean create(T obj);
 
-	public abstract boolean Update(int id, String data);
+	public abstract boolean update(int id, String data);
 
-	public abstract boolean Delete(int id);
+	public abstract boolean delete(int id);
 
-	public abstract T Find(int id);
+	public abstract T find(int id);
 
 }

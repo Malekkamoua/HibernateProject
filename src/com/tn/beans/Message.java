@@ -6,9 +6,8 @@ public class Message {
 	private String text;
 	private Client client;
 
-	public Message(String text, Client client) {
+	public Message(String text) {
 		this.text = text;
-		this.client = client;
 	}
 
 	public int getIdMessage() {
